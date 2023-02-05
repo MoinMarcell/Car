@@ -16,14 +16,3 @@ Erstelle eine Klasse ```CarService``` mit den Methoden:
 Erstelle einen ```CarController```
 - Schreibe einen Post-Entpunkt der im Body ein Car entgegen nimmt und die addCar() Methode vom CarService aufruft.
 - Schreibe einen Get-Endpunkt der die getCar Methode vom CarService aufruft und dann eine Liste von allen Autos zurückgibt.
-
-# Aufgabe Car Bonus
-
-Füge einen Delete-Endpunkt hinzu um ein zuvor hinzugefügtes `Car` wieder zu entfernen.
-
-```DELETE /api/car/{id}```
-
-Füge einen Put-Endpunkt hinzu um ein bereits hinzugefügtes `Car zu verändern. 
-Hier soll im Body des Request das veränderte Objekt mitgeschickt werden.
-
-```PUT /api/car/{id}```
