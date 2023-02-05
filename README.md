@@ -1,5 +1,3 @@
-# Car
-
 # Aufgabe Car
 
 Erstelle eine Klasse ```Car``` mit den folgenden Eigenschaften:
