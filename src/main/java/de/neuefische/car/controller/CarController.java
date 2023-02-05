@@ -6,14 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Erstelle einen ```CarController```
- * - Schreibe einen Post-Endpunkt der im Body ein Car entgegennimmt und die addCar() Methode vom CarService aufruft.
- * - Schreibe einen Get-Endpunkt der die getCar Methode vom CarService aufruft und dann eine Liste von allen Autos zurückgibt.
- */
-
 @RestController
-@RequestMapping("/cars")
+@RequestMapping("/api/cars")
 public class CarController {
 
     private final CarService carService;
@@ -30,5 +24,22 @@ public class CarController {
     @PostMapping
     public void addCar(@RequestBody Car car) {
         carService.addCar(car);
+    }
+
+    /**
+     * Füge einen Delete-Endpunkt hinzu, um ein zuvor hinzugefügtes `Car` wieder zu entfernen.
+     */
+    @DeleteMapping("/{id}")
+    public void deleteCar(@PathVariable String id) {
+        carService.deleteCar(id);
+    }
+
+    /**
+     * Füge einen Put-Endpunkt hinzu, um ein bereits hinzugefügtes `Car zu verändern.
+     * Hier soll im Body des Request das veränderte Objekt mitgeschickt werden.
+     */
+    @PutMapping("/{id}")
+    public void updateCar(@PathVariable String id, @RequestBody Car car) {
+        carService.updateCar(id, car);
     }
 }

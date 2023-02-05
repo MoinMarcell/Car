@@ -6,12 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Erstelle eine Klasse ```CarService``` mit den Methoden:
- * - addCar(Car car), ruft die addCar Methode des Repositorys auf,
- * - getCars(), ruft die getCars Methode vom Repository auf.
- */
-
 @Service
 public class CarService {
     private final CarRepository carRepository;
@@ -26,5 +20,13 @@ public class CarService {
 
     public List<Car> getCars() {
         return carRepository.getCars();
+    }
+
+    public void deleteCar(String id) {
+        carRepository.deleteCar(id);
+    }
+
+    public void updateCar(String id, Car car) {
+        carRepository.updateCar(id, car);
     }
 }
