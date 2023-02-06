@@ -5,6 +5,7 @@ import de.neuefische.car.repository.CarRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CarService {
@@ -15,7 +16,8 @@ public class CarService {
     }
 
     public void addCar(Car car) {
-        carRepository.addCar(car);
+        Car carToAdd = new Car(UUID.randomUUID().toString(), car.brand(), car.tires(), car.hasTuev());
+        carRepository.addCar(carToAdd);
     }
 
     public List<Car> getCars() {
