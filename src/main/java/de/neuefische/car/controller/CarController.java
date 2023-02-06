@@ -2,6 +2,7 @@ package de.neuefische.car.controller;
 
 import de.neuefische.car.model.Car;
 import de.neuefische.car.service.CarService;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,13 +15,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/cars")
+@AllArgsConstructor
 public class CarController {
 
     private final CarService carService;
-
-    public CarController(CarService carService) {
-        this.carService = carService;
-    }
 
     @GetMapping
     public List<Car> getCars() {

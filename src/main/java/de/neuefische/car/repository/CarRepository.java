@@ -1,6 +1,7 @@
 package de.neuefische.car.repository;
 
 import de.neuefische.car.model.Car;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,12 +13,9 @@ import java.util.List;
  */
 
 @Repository
+@AllArgsConstructor
 public class CarRepository {
     private final List<Car> cars;
-
-    public CarRepository(List<Car> cars) {
-        this.cars = cars;
-    }
 
     public void addCar(Car car) {
         cars.add(car);
